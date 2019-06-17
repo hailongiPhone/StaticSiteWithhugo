@@ -1,6 +1,6 @@
 ---
-layout: post
-category: iOS
+# layout: post
+category: [iOS]
 title: convert plist file from NSData to NSDictionary
 date: 2012-02-15 15:34:57
 ---
@@ -11,8 +11,8 @@ date: 2012-02-15 15:34:57
 
   {% highlight objc %}
 
-  NSString *plistPath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];  
-  plistData = [NSData dataWithContentsOfFile:plistPath];   
+  NSString *plistPath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
+  plistData = [NSData dataWithContentsOfFile:plistPath];
 
   {% endhighlight objc %}
 
@@ -31,22 +31,21 @@ date: 2012-02-15 15:34:57
 4. plist文件从NSData转换到相应的NSDictionary/NSArray
 
   {% highlight objc %}
-  NSData *plistData;  
-   NSString *error;  
-   NSPropertyListFormat format;  
-   id plist;  
-  
-   NSString *localizedPath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];  
-   plistData = [NSData dataWithContentsOfFile:localizedPath];   
-  
-  //关键代码 
-  plist = [NSPropertyListSerialization propertyListFromData:plistData mutabilityOption:NSPropertyListImmutable format:&format errorDescription:&error]; 
- 
-   if (!plist) {  
-      NSLog(@"Error reading plist from file '%s', error = '%s'", [localizedPath UTF8String], [error UTF8String]);  
-      [error release];  
-   }  
-  
-   return plist; 
-  {% endhighlight objc %}
+  NSData *plistData;
+   NSString *error;
+   NSPropertyListFormat format;
+   id plist;
 
+   NSString *localizedPath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
+   plistData = [NSData dataWithContentsOfFile:localizedPath];
+
+  //关键代码
+  plist = [NSPropertyListSerialization propertyListFromData:plistData mutabilityOption:NSPropertyListImmutable format:&format errorDescription:&error];
+
+   if (!plist) {
+      NSLog(@"Error reading plist from file '%s', error = '%s'", [localizedPath UTF8String], [error UTF8String]);
+      [error release];
+   }
+
+   return plist;
+  {% endhighlight objc %}

@@ -1,6 +1,6 @@
 ---
-layout: post
-category:
+# layout: post
+category: [iOS]
 title: Circular inclusions
 date: 2012-02-29 12:35:53
 ---

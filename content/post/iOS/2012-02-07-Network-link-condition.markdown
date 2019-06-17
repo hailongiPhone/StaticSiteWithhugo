@@ -1,6 +1,6 @@
 ---
-layout: post
-category: iOS
+# layout: post
+category: [iOS]
 title: Network link condition
 date: 2012-02-07 11:57:11
 ---

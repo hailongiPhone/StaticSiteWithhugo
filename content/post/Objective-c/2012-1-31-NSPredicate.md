@@ -1,5 +1,6 @@
 ---
-layout : post
+# layout : post
+title: Predicate
 categories : [Objective-c]
 tags : [Objecitve-c,NSPredicate]
 ---

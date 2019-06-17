@@ -1,6 +1,6 @@
 ---
-layout: post
-category: iOS
+# layout: post
+category: [iOS]
 title: System-Absolute-Time
 date: 2012-02-08 17:07:35
 ---
@@ -48,7 +48,7 @@ Absolute time is measured in seconds relative to the absolute reference date of 
     //code ....
     NSLog(@"%s(timer:%d):%f",__FUNCTION__,__obj__,CFAbsoluteTimeGetCurrent()-startTime);
 {% endhighlight %}
-  
+
 
 
 ## 参考资料

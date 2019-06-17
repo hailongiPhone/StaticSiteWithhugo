@@ -1,5 +1,6 @@
 ---
-layout : post
+# layout : post
+title: 过滤数组
 categories : [Objective-c]
 tags : [Objecitve-c,Code,NSPredicate]
 ---

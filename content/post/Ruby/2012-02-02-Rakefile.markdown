@@ -1,5 +1,6 @@
 ---
-layout : post
+# layout : post
+
 category : [Ruby]
 title : Rakefile
 tags : [Rakefile,Ruby]
