@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>FTP Commands - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="[命令行工具]Ftp 本文用来记录使用到的Ftp基本命令。 本文涉及命令： 登陆远程服务器 上传文件 下载文件 登陆远程服务器 登陆方式一： 1 发送连接请求" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.60.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/terminalcommands/2012-1-17-ftpcommands/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="FTP Commands" />
+<meta property="og:description" content="[命令行工具]Ftp 本文用来记录使用到的Ftp基本命令。 本文涉及命令： 登陆远程服务器 上传文件 下载文件 登陆远程服务器 登陆方式一： 1 发送连接请求" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/terminalcommands/2012-1-17-ftpcommands/" />
+
+<meta itemprop="name" content="FTP Commands">
+<meta itemprop="description" content="[命令行工具]Ftp 本文用来记录使用到的Ftp基本命令。 本文涉及命令： 登陆远程服务器 上传文件 下载文件 登陆远程服务器 登陆方式一： 1 发送连接请求">
+
+<meta itemprop="wordCount" content="411">
+
+
+
+<meta itemprop="keywords" content="Ftp,Terminal，Commands," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="FTP Commands"/>
+<meta name="twitter:description" content="[命令行工具]Ftp 本文用来记录使用到的Ftp基本命令。 本文涉及命令： 登陆远程服务器 上传文件 下载文件 登陆远程服务器 登陆方式一： 1 发送连接请求"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">FTP Commands</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 0001-01-01 </span>
+        <div class="post-category">
+            <a href="/categories/terminalcommands/"> TerminalCommands </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading1">登陆远程服务器</a>
+      <ul>
+        <li><a href="#heading2">登陆方式一：</a></li>
+        <li><a href="#heading3">登陆方式二：</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading4">上传文件：</a></li>
+    <li><a href="#heading5">下载文件：</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="ftp">[命令行工具]Ftp</h1>
+<pre><code>本文用来记录使用到的Ftp基本命令。
+</code></pre>
+<h1 id="heading">本文涉及命令：</h1>
+<ul>
+<li>登陆远程服务器</li>
+<li>上传文件</li>
+<li>下载文件</li>
+</ul>
+<h2 id="heading1">登陆远程服务器</h2>
+<h3 id="heading2">登陆方式一：</h3>
+<p>1 发送连接请求</p>
+<pre><code>    ftp&gt; open 远程服务器地址
+</code></pre>
+<p>2 输入用户命</p>
+<pre><code>    Name （远程服务器：用户）：
+</code></pre>
+<p>3 输入密码</p>
+<pre><code>    331 Please specify the password.
+    Password:
+</code></pre>
+<h3 id="heading3">登陆方式二：</h3>
+<pre><code>ftp 登陆用户名@远程服务器地址
+</code></pre>
+<h2 id="heading4">上传文件：</h2>
+<pre><code>    ftp&gt; put 要上传的文件路径 [在服务器上保存路径]
+</code></pre>
+<h2 id="heading5">下载文件：</h2>
+<pre><code>    ftp&gt; get 服务器上要下载的文件路径 [本地保存路径]
+</code></pre>
+<h1 id="heading6">与路径相关的命令</h1>
+<pre><code>    ftp&gt; pwd 				//显示服务器上的当前路径
+    ftp&gt; ls  				//列表显示服务器上的当前路径目录文件
+    ftp&gt; dir  				//同上
+    ftp&gt; mkdir 目录  		//新建目录
+    ftp&gt; rmdir 目录  		//删除目录
+    ftp&gt; cd 目录
+    ftp&gt; delete 文件名  				//删除文件
+    ftp&gt; rename [文件名] [新文件名]  	//修改文件名
+</code></pre>
+<h1 id="heading7">与服务器断开连接</h1>
+<pre><code>    ftp&gt; close 				//断开连接，但保留&quot;ftp&gt;&quot;会话
+    ftp&gt; disconnect  		//同上
+    ftp&gt; bye  				//结束连接会话
+    ftp&gt; quit		  		//结束连接会话
+</code></pre>
+<h1 id="ftpshell">ftp环境与本地shell之间的切换</h1>
+<pre><code>    ftp&gt; ！			  		//进入本地shell
+    XXX &gt; exit				//从本地shell环境回到ftp远程服务器环境
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">olOwOlo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        0001-01-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/ftp/">Ftp</a>
+          <a href="/tags/terminalcommands/">Terminal，Commands</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/cocoa-touch/2012-02-02-cocoa-touch-animations/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">cocoa-touch-Animations</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/objective-c/2012-1-31-nspredicate/">
+            <span class="next-text nav-default">Predicate</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">olOwOlo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

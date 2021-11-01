@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Predicate - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="内容： Predicate的基本知识和限制 如何创建predicate 介绍常用的 predicate 语法 基础介绍： 什么是predicate？ 一个predicate" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.60.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/objective-c/2012-1-31-nspredicate/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Predicate" />
+<meta property="og:description" content="内容： Predicate的基本知识和限制 如何创建predicate 介绍常用的 predicate 语法 基础介绍： 什么是predicate？ 一个predicate" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/objective-c/2012-1-31-nspredicate/" />
+
+<meta itemprop="name" content="Predicate">
+<meta itemprop="description" content="内容： Predicate的基本知识和限制 如何创建predicate 介绍常用的 predicate 语法 基础介绍： 什么是predicate？ 一个predicate">
+
+<meta itemprop="wordCount" content="1407">
+
+
+
+<meta itemprop="keywords" content="Objecitve-c,NSPredicate," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Predicate"/>
+<meta name="twitter:description" content="内容： Predicate的基本知识和限制 如何创建predicate 介绍常用的 predicate 语法 基础介绍： 什么是predicate？ 一个predicate"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Predicate</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 0001-01-01 </span>
+        <div class="post-category">
+            <a href="/categories/objective-c/"> Objective-c </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+        <li><a href="#format-string-summary">Format String Summary</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h4 id="heading">内容：</h4>
+<ul>
+<li>Predicate的基本知识和限制</li>
+<li>如何创建predicate</li>
+<li>介绍常用的 predicate 语法</li>
+</ul>
+<h4 id="heading1">基础介绍：</h4>
+<h5 id="predicate">什么是predicate？</h5>
+<pre><code>一个predicate是一个逻辑运算，必须要返回True或者False。
+</code></pre>
+<h5 id="predicate1">predicate的分类？</h5>
+<pre><code>- comparison predicate
+    比较式的谓词，比较运算符两边的数据，返回运算符表达式的结果
+
+- compound predicate
+  组合式的谓词，由多个谓词组合而成，或者negates其他谓词
+</code></pre>
+<h5 id="predicate-classes-">Predicate Classes 结构</h5>
+<p>3个谓词类，<code>NSPredicate</code> 和 它的两个子类 NSComparisonPredicate NSCompoundPredicate</p>
+<h5 id="heading2">如何创建谓词</h5>
+<p>三种方式：
+从格式化字符串创建</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">NSPredicate</span> <span class="o">*</span><span class="n">predicate</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSPredicate</span>
+<span class="nl">predicateWithFormat</span><span class="p">:</span><span class="s">@&#34;</span><span class="s">(lastName like[cd] %@) AND (birthday &gt; %@)</span><span class="s">&#34;</span><span class="p">,</span><span class="n">lastNameSearchString</span><span class="p">,</span> <span class="n">birthdaySearchDate</span><span class="p">]</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>注意</p>
+<pre><code>* 是对于这种格式化字符串，在写的时候并不会做语义分析，所以只有在运行时runtime才会对其做语义解析，才能发现格式化字符串是否有错
+* 对于字符串，变量，转义字符的使用。
+对于字符串，字符串变量要用引号包含起来
+例如：判断lastName中是否是 S开头
+</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">NSPredicate</span> <span class="o">*</span><span class="n">predicate</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSPredicate</span>
+<span class="nl">predicateWithFormat</span><span class="p">:</span><span class="s">@&#34;</span><span class="s">lastName like[c] </span><span class="se">\&#34;</span><span class="s">S*</span><span class="se">\&#34;</span><span class="s">&#34;</span><span class="p">]</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>例如：判断字符串本身是否符合 “prefix*suffix”的格式</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">NSString</span> <span class="o">*</span><span class="n">prefix</span> <span class="o">=</span> <span class="s">@&#34;</span><span class="s">prefix</span><span class="s">&#34;</span><span class="p">;</span>
+<span class="n">NSString</span> <span class="o">*</span><span class="n">suffix</span> <span class="o">=</span> <span class="s">@&#34;</span><span class="s">suffix</span><span class="s">&#34;</span><span class="p">;</span>
+<span class="n">NSPredicate</span> <span class="o">*</span><span class="n">predicate</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSPredicate</span>
+<span class="nl">predicateWithFormat</span><span class="p">:</span><span class="s">@&#34;</span><span class="s">SELF like[c] %@</span><span class="s">&#34;</span><span class="p">,</span><span class="p">[</span><span class="p">[</span><span class="n">prefix</span> <span class="nl">stringByAppendingString</span><span class="p">:</span><span class="s">@&#34;</span><span class="s">*</span><span class="s">&#34;</span><span class="p">]</span> <span class="nl">stringByAppendingString</span><span class="p">:</span><span class="n">suffix</span><span class="p">]</span><span class="p">]</span><span class="p">;</span>
+<span class="kt">BOOL</span> <span class="n">ok</span> <span class="o">=</span> <span class="p">[</span><span class="n">predicate</span> <span class="nl">evaluateWithObject</span><span class="p">:</span><span class="s">@&#34;</span><span class="s">prefixxxxxxsuffix</span><span class="s">&#34;</span><span class="p">]</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这里的返回值ok就为YES
+但如果写成：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">predicate</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSPredicate</span> <span class="nl">predicateWithFormat</span><span class="p">:</span><span class="s">@&#34;</span><span class="s">SELF like[c] %@*%@</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">suffix</span><span class="p">]</span><span class="p">;</span>
+<span class="n">ok</span> <span class="o">=</span> <span class="p">[</span><span class="n">predicate</span> <span class="nl">evaluateWithObject</span><span class="p">:</span><span class="s">@&#34;</span><span class="s">prefixxxxxxsuffix</span><span class="s">&#34;</span><span class="p">]</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>或者</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">predicate</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSPredicate</span> <span class="nl">predicateWithFormat</span><span class="p">:</span><span class="s">@&#34;</span><span class="s">SELF like[c] %@*</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">prefix</span><span class="p">]</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在运行时就会报错， (Unable to parse the format string &ldquo;SELF like[c] %@&quot;).</p>
+<p>对于Boolean 值的使用
+只能以NSNumber或者YES、NO的方式使用，如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc">	<span class="n">NSPredicate</span> <span class="o">*</span><span class="n">newPredicate</span> <span class="o">=</span>
+    <span class="p">[</span><span class="n">NSPredicate</span> <span class="nl">predicateWithFormat</span><span class="p">:</span><span class="s">@&#34;</span><span class="s">anAttribute == %@</span><span class="s">&#34;</span><span class="p">,</span> <span class="p">[</span><span class="n">NSNumber</span> <span class="nl">numberWithBool</span><span class="p">:</span><span class="n">aBool</span><span class="p">]</span><span class="p">]</span><span class="p">;</span>
+<span class="n">NSPredicate</span> <span class="o">*</span><span class="n">testForTrue</span> <span class="o">=</span>
+    <span class="p">[</span><span class="n">NSPredicate</span> <span class="nl">predicateWithFormat</span><span class="p">:</span><span class="s">@&#34;</span><span class="s">anAttribute == YES</span><span class="s">&#34;</span><span class="p">]</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>4 动态属性名</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">NSString</span> <span class="o">*</span><span class="n">attributeName</span> <span class="o">=</span> <span class="s">@&#34;</span><span class="s">firstName</span><span class="s">&#34;</span><span class="p">;</span>
+<span class="n">NSString</span> <span class="o">*</span><span class="n">attributeValue</span> <span class="o">=</span> <span class="s">@&#34;</span><span class="s">Adam</span><span class="s">&#34;</span><span class="p">;</span>
+<span class="n">NSPredicate</span> <span class="o">*</span><span class="n">predicate</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSPredicate</span> <span class="nl">predicateWithFormat</span><span class="p">:</span><span class="s">@&#34;</span><span class="s">%K like %@</span><span class="s">&#34;</span><span class="p">,</span>
+        <span class="n">attributeName</span><span class="p">,</span> <span class="n">attributeValue</span><span class="p">]</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>其效果： firstName like &ldquo;Adam&rdquo;</p>
+<p>5 表达式变量
+详见模版方式创建predicate</p>
+<ul>
+<li>用代码创建
+NSComparisonPredicate 和 NSCompoundPredicate就是为了方便用代码直接产生谓词的。还需要使用的是NSExpression-生成谓词表达式。
+例如：用代码创建判断revenue &gt;= 1000000和revenue &lt; 100000000的谓词
+代码如下：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">NSExpression</span> <span class="o">*</span><span class="n">lhs</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSExpression</span> <span class="nl">expressionForKeyPath</span><span class="p">:</span><span class="s">@&#34;</span><span class="s">revenue</span><span class="s">&#34;</span><span class="p">]</span><span class="p">;</span>
+
+<span class="n">NSExpression</span> <span class="o">*</span><span class="n">greaterThanRhs</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSExpression</span> <span class="nl">expressionForConstantValue</span><span class="p">:</span><span class="p">[</span><span class="n">NSNumber</span> <span class="nl">numberWithInt</span><span class="p">:</span><span class="mi">1000000</span><span class="p">]</span><span class="p">]</span><span class="p">;</span>
+<span class="n">NSPredicate</span> <span class="o">*</span><span class="n">greaterThanPredicate</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSComparisonPredicate</span>
+    <span class="nl">predicateWithLeftExpression</span><span class="p">:</span><span class="n">lhs</span>
+    <span class="nl">rightExpression</span><span class="p">:</span><span class="n">greaterThanRhs</span>
+    <span class="nl">modifier</span><span class="p">:</span><span class="n">NSDirectPredicateModifier</span>
+    <span class="nl">type</span><span class="p">:</span><span class="n">NSGreaterThanOrEqualToPredicateOperatorType</span>
+    <span class="nl">options</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span><span class="p">;</span>
+
+<span class="n">NSExpression</span> <span class="o">*</span><span class="n">lessThanRhs</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSExpression</span> <span class="nl">expressionForConstantValue</span><span class="p">:</span><span class="p">[</span><span class="n">NSNumber</span> <span class="nl">numberWithInt</span><span class="p">:</span><span class="mi">100000000</span><span class="p">]</span><span class="p">]</span><span class="p">;</span>
+<span class="n">NSPredicate</span> <span class="o">*</span><span class="n">lessThanPredicate</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSComparisonPredicate</span>
+    <span class="nl">predicateWithLeftExpression</span><span class="p">:</span><span class="n">lhs</span>
+    <span class="nl">rightExpression</span><span class="p">:</span><span class="n">lessThanRhs</span>
+    <span class="nl">modifier</span><span class="p">:</span><span class="n">NSDirectPredicateModifier</span>
+    <span class="nl">type</span><span class="p">:</span><span class="n">NSLessThanPredicateOperatorType</span>
+    <span class="nl">options</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span><span class="p">;</span>
+
+<span class="n">NSCompoundPredicate</span> <span class="o">*</span><span class="n">predicate</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSCompoundPredicate</span> <span class="nl">andPredicateWithSubpredicates</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">NSArray</span> <span class="nl">arrayWithObjects</span><span class="p">:</span><span class="n">greaterThanPredicate</span><span class="p">,</span> <span class="n">lessThanPredicate</span><span class="p">,</span> <span class="nb">nil</span><span class="p">]</span><span class="p">]</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>用谓词模版创建
+谓词模版的出现，可以视作是对于方便使用，但是容易出错的格式化字符串，和纯代码方式的中和。
+谓词模版实际上就是包含表达式变量的谓词。</li>
+</ul>
+<p>使用的步骤：
+1 创建谓词模版
+2 使用NSPredicate 的实例方法 predicateWithSubstitutionVariables:来定义表达式变量的值，并返回最终的谓词。</p>
+<p>如下：
+￥LAST_NAME 就算是一个表达式变量(variable expression)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">predicateTemplate</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSPredicate</span>
+    <span class="nl">predicateWithFormat</span><span class="p">:</span><span class="s">@&#34;</span><span class="s">lastName like[c] $LAST_NAME</span><span class="s">&#34;</span><span class="p">]</span><span class="p">;</span>
+<span class="n">predicate</span> <span class="o">=</span> <span class="p">[</span><span class="n">predicateTemplate</span> <span class="nl">predicateWithSubstitutionVariables</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">NSDictionary</span> <span class="nl">dictionaryWithObject</span><span class="p">:</span><span class="s">@&#34;</span><span class="s">Turner</span><span class="s">&#34;</span> <span class="nl">forKey</span><span class="p">:</span><span class="s">@&#34;</span><span class="s">LAST_NAME</span><span class="s">&#34;</span><span class="p">]</span><span class="p">]</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="format-string-summary">Format String Summary</h3>
+<p>上面讲完了初始化NSPredicate的3种方式，
+总结下在格式化字符串中出现的关键字占位符</p>
+<p>%@ 如同printf，替换为对应变量的description
+%K 替换为动态的属性名
+$variable 替换为表达式</p>
+<p>常见的格式如下：</p>
+<p>@&ldquo;SELF == %@&rdquo;
+判断检查对象本身的值是否等于占位符%@指代的对象</p>
+<p>@&ldquo;attributeName == %@&rdquo;
+判断谓词正在检测的对象的属性attributeName的值是否与占位符替代的字符串的值相等。</p>
+<p>@&quot;%K == %@&rdquo;
+判断正在检测对象的属性（由占位符%K指定属性名称）的值是否与%@指定的字符串对象相等</p>
+<p>@&ldquo;name IN $NAME_LIST&rdquo;
+判断属性name的值 是否在NAME_LIST指定的集合当中，这个集合由predicateWithSubstitutionVariables：方法指定</p>
+<p>@&quot;&lsquo;name&rsquo; IN $NAME_LIST&rdquo;
+判断字符串‘name’是否在NAME_LIST指定的集合当中。</p>
+<p>@&ldquo;$name IN $NAME_LIST&rdquo;
+判断name表达式的值是否在NAME_LIST表达式指定的集合中。</p>
+<p>@&quot;%K == &lsquo;%@'&rdquo;
+判断%K属性的值是否和字符串&rsquo;%@&lsquo;相等</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">olOwOlo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        0001-01-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/objecitve-c/">Objecitve-c</a>
+          <a href="/tags/nspredicate/">NSPredicate</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/terminalcommands/2012-1-17-ftpcommands/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">FTP Commands</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/ruby/2012-02-02-rakefile/">
+            <span class="next-text nav-default">Rakefile</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">olOwOlo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
